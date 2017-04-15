@@ -1,0 +1,18 @@
+extends layout
+    
+block content  
+    link(href='/css/extends/login.css', rel='stylesheet')
+    body
+    .container
+      form.form-signin(role='form')
+        
+        h2.form-signin-heading Login
+        h5.form-signin-heading Unauthorized access is strictly prohibited.
+        br
+        input.form-control(type='username', placeholder='StudentID (10 digits)', required='', autofocus='')
+        input.form-control(type='password', placeholder='Password', required='')
+        .checkbox
+            label
+                input(type='checkbox', value='remember-me')
+                |  Remember me
+        button.btn.btn-lg.btn-primary.btn-block(type='submit') Sign in
