@@ -2,7 +2,6 @@ extends layout
 
 block content
     link(href='/css/extends/starter-template.css', rel='stylesheet')
-    link(href='/css/extends/login.css', rel='stylesheet')
     body
     .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
       .container
@@ -61,8 +60,40 @@ block content
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-log-out(style='font-size:16px;')
         .col-sm-10
           .container-fluid
-            h2 Welcome back Student!
-            h4 Please select menu on navigation stack at the left.
+            h1 Welcome back Student!
+            br
+            br
+            | Please select menu on navigation stack at the left.
+            br
+            br
+            br
+            .row
+              h3 Student Status Information
+              br
+              button.btn.btn-lg.btn-muted(type='button') Prohibited
+              | &nbsp; &nbsp;
+              button.btn.btn-lg.btn-muted(type='button') Study Abroad
+              | &nbsp; &nbsp;
+              button.btn.btn-lg.btn-muted(type='button') Leave
+              | &nbsp; &nbsp;
+              button.btn.btn-lg.btn-primary(type='button') Interned
+              | &nbsp; &nbsp;
+              button.btn.btn-lg.btn-muted(type='button') Graduated
+            br
+            br
+            br
+            .row
+              .col-sm-2(align="center")
+                h3 GPAX
+                button.btn.btn-lg.btn-success(type='button') 3.14
+              .col-sm-2(align="center")
+                h3 GPA
+                button.btn.btn-lg.btn-success(type='button') 3.60
+              .col-sm-3(align="center")
+                h3 &nbsp;Incoming
+                button.btn.btn-lg.btn-danger(type='button') Final
+
+
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
     script(src=`${pathToAssets}/dist/js/bootstrap.min.js`)
