@@ -69,12 +69,39 @@ block content
             br
             br
             .row
+              .col-lg-1
+                h4 Prefix
+                br 
+                button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false' disabled)
+                  | Mr. &nbsp;
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Mr.
+                  li
+                    a(href='#') Ms.
               .col-lg-3
                 h4 First name  
-                input.form-control(type="text" placeholder="Mr.Brown")
+                input.form-control(type="text" value="Brown" disabled)
               .col-lg-3
                 h4 Last name  
-                input.form-control(type="text" placeholder="Line")
-	
+                input.form-control(type="text" value="Line" disabled)
+              .col-lg-2
+                h4 Birth Date
+                input.form-control(type="date" value="3/14/15" disabled)
+            br
+            .row
+              .col-lg-9
+                h4 Address
+                input.form-control(type="text" value="1 Empire tower, 41st floor, River wing west, South Sathorn road, Yannawa, Sathorn, Bangkok 10120" disabled)
+            br
+            .row
+              .col-lg-3
+                h4 Email Address
+                input.form-control(type="text" value="brown@line.me" disabled)
+              .col-lg-3
+                h4 Phone
+                input.form-control(type="text" value="089-999-9999" disabled)
+                
       script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
-      script(src=`${pathToAssets}/dist/js/bootstrap.min.js`)
+      script(src="js/bootstrap.min.js")

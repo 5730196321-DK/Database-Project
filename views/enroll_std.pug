@@ -2,7 +2,6 @@ extends layout
 
 block content
     link(href='/css/extends/starter-template.css', rel='stylesheet')
-    link(href='/css/extends/login.css', rel='stylesheet')
     body
     .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
       .container
@@ -61,8 +60,51 @@ block content
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-log-out(style='font-size:16px;')
         .col-sm-10
           .container-fluid
-            h2 To be Enrollment Page!
-
-
+            h1 Enrollment
+            br
+            br
+            | See which courses you are studying here.
+            br
+            br  
+            h3 Academic year <font class="text-primary">2016</font> Semester <font class="text-primary">2</font>
+            .row
+              .col-sm-1
+                |
+              .col-sm-5
+                br
+                table.table.table-striped
+                  thead
+                    tr
+                      th Course ID
+                      th Course Name
+                      th Section
+                      th Credit
+                  tbody(align="center")
+                    tr
+                      th(scope='row') 2110318
+                      td(align="left") DIS SYS ESSEN
+                      td 3
+                      td 1
+                    tr
+                      th(scope='row') 2110332
+                      td(align="left") SYS ANALYSIS DSGN
+                      td 2
+                      td 3
+                    tr
+                      th(scope='row') 2110422
+                      td(align="left") DB MGT SYS DESIGN
+                      td 1
+                      td 3
+                    tr
+                      th(scope='row') 2110471
+                      td(align="left") COMP NETWORK I
+                      td 3
+                      td 3   
+                    tr
+                      th(scope='row') 5500308
+                      td(align="left") TECH WRIT ENG
+                      td 13
+                      td 3   
+                                
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
-    script(src=`${pathToAssets}/dist/js/bootstrap.min.js`)
+    script(src="js/bootstrap.min.js")
