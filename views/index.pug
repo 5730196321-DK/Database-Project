@@ -1,7 +1,8 @@
 extends layout
 
 block content
-    link(href='/css/extends/signin.css', rel='stylesheet')
+    link(href='/css/extends/starter-template.css', rel='stylesheet')
+    link(href='/css/extends/login.css', rel='stylesheet')
     body
     .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
       .container
@@ -13,22 +14,57 @@ block content
             span.icon-bar
           a.navbar-brand(href='index') Database-Project
         .collapse.navbar-collapse
+          
           ul.nav.navbar-nav
             li.active
-              a(href='#') Home
+              a(href='#') Site
             li
               a(href='about') About
-            li
-              a(href='login') Login
-        .nav-collapse
     .container
-      .starter-template
-        br
-        h1 Bootstrap starter template
-        p.lead
-          | Use this document as a way to quickly start any new project.
-          br
-          |  All you get is this text and a mostly barebones HTML document.
-          
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
-    script(src=`${pathToAssets}/dist/js/bootstrap.min.js`)
+      br
+      br
+      .row
+        .col-sm-2
+          nav.navbar.navbar-default.sidebar(role='navigation')
+            .container-fluid
+              ul.nav.navbar-nav
+                li
+                  a(href='index')
+                    | Welcome &nbsp; 
+                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-asterisk(style='font-size:16px;')
+        .col-sm-6
+          .container-fluid
+            h2 Welcome to Database Query System
+            h4 Computer Engineering, Chulalongkorn University
+            br
+            br
+            h4 Terms and Conditions
+            p
+              | &nbsp; This site was created by GG-EZ Group for Database Project 2017 uses only.
+            br
+            br
+            br
+            br
+            br
+            br
+            font(color='red') ** Unauthorized access is strictly prohibited.
+        .col-sm-4
+            .formholder
+              .randompad
+                h3 Authentication
+                br
+                | StudentID
+                input(type='username',placeholder='10 digits')
+                | Password
+                input(type='password',placeholder='Reg-CU Password')
+                br
+                .checkbox
+                  label
+                    input(type='checkbox')
+                    |  checking this box mean agree to the agreement and privacy and cookies statement.
+                a(href='index_std')
+                  input(type='submit', value='Login')
+      script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
+      script(src='js/login.js')
+      script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+      script(src=`${pathToAssets}/dist/js/bootstrap.min.js`)

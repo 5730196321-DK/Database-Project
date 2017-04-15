@@ -3,5 +3,7 @@ body {
 }
 .starter-template {
   padding: 40px 15px;
-  text-align: center;
+}
+h1, h2 {
+  display: inline;
 }

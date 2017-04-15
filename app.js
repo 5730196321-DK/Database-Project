@@ -9,6 +9,13 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
 var about = require('./routes/about');
+var account = require('./routes/account');
+var index_std = require('./routes/index_std');
+var account_std = require('./routes/account_std');
+var grade_std = require('./routes/grade_std');
+var enroll_std = require('./routes/enroll_std');
+var activity_std = require('./routes/activity_std');
+var search_std = require('./routes/search_std');
 
 var app = express();
 
@@ -29,6 +36,13 @@ app.use('/index', index);
 app.use('/users', users);
 app.use('/login', login);
 app.use('/about', about);
+app.use('/account', account);
+app.use('/index_std', index_std);
+app.use('/account_std', account_std);
+app.use('/grade_std', grade_std);
+app.use('/enroll_std', enroll_std);
+app.use('/activity_std', activity_std);
+app.use('/search_std', search_std);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
