@@ -15,6 +15,7 @@ var account_std = require('./routes/account_std');
 var grade_std = require('./routes/grade_std');
 var enroll_std = require('./routes/enroll_std');
 var activity_std = require('./routes/activity_std');
+var intern_std = require('./routes/intern_std')
 var search_std = require('./routes/search_std');
 
 var app = express();
@@ -43,6 +44,7 @@ app.use('/grade_std', grade_std);
 app.use('/enroll_std', enroll_std);
 app.use('/activity_std', activity_std);
 app.use('/search_std', search_std);
+app.use('/intern_std', intern_std);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

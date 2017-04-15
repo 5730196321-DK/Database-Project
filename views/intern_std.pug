@@ -1,7 +1,8 @@
 extends layout
 
 block content
-    link(href='/css/extends/account.css', rel='stylesheet')
+    link(href='/css/extends/starter-template.css', rel='stylesheet')
+    link(href='/css/extends/login.css', rel='stylesheet')
     body
     .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
       .container
@@ -31,11 +32,11 @@ block content
                     | Home &nbsp; 
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-home(style='font-size:16px;')
                 li
-                  a(href='#')
-                    font(class="text-primary") | Account &nbsp;
-                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-user(style='font-size:16px;' class="text-primary")
+                  a(href='account_std')
+                    | Account &nbsp;
+                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-user(style='font-size:16px;')
                 li
-                  a(href='grade_std')
+                  a(href='#')
                     | Grade &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-education(style='font-size:16px;')
                 li
@@ -48,8 +49,8 @@ block content
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-time(style='font-size:16px;')
                 li
                   a(href='intern_std')
-                    | Internship &nbsp;
-                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-usd(style='font-size:16px;')
+                    font(class="text-primary") | Internship &nbsp;
+                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-usd(style='font-size:16px;' class="text-primary")                
                 li
                   a(href='search_std')
                     | Search &nbsp;
@@ -60,21 +61,7 @@ block content
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-log-out(style='font-size:16px;')
         .col-sm-10
           .container-fluid
-            h1 Account Manager &nbsp; &nbsp;
-            button.btn.btn-lg.btn-primary(type='button') Edit
-            img.responsive-img(src="images/brown.png" align="right" style='max-height:150px;' alt="face")
-            br
-            | You can manage your account here.
-            br
-            br
-            br
-            .row
-              .col-lg-3
-                h4 First name  
-                input.form-control(type="text" placeholder="Mr.Brown")
-              .col-lg-3
-                h4 Last name  
-                input.form-control(type="text" placeholder="Line")
-	
-      script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
-      script(src=`${pathToAssets}/dist/js/bootstrap.min.js`)
+            h2 To be Internship Page!
+
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    script(src=`${pathToAssets}/dist/js/bootstrap.min.js`)
