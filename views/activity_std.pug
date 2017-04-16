@@ -60,7 +60,59 @@ block content
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-log-out(style='font-size:16px;')
         .col-sm-10
           .container-fluid
-            h2 To be Activities Page!
+            .row
+              .col-lg-8
+                h1 Activities List
+                br
+                br
+                | Activities that you paticipated in the past. 
+              .col-lg-2(align="center")
+                h4 Total Activities
+                button.btn.btn-lg.btn-muted(type='button') 4
+              .col-lg-2(align="center")
+                h4 Total Rewards
+                button.btn.btn-lg.btn-muted(type='button') 2
+            br
+            br
+            br
+            .row
+              table.table.table-striped
+                thead
+                  tr
+                    th Activity No.
+                    th Activity Name
+                    th Organization
+                    th Reward Name
+                    th Date
+                tbody
+                  tr
+                    th(scope='row' ) 1701001
+                    td CU-Resident Camp
+                    td CU-Resident
+                    td -
+                    td 23/05/2017
+                  tr
+                    th(scope='row') 1621023
+                    td ACM-2016
+                    td CU-ComputerEng
+                    td 1st Award
+                    td 14/02/2016
+                  tr
+                    th(scope='row') 1521102
+                    td LarngearCamp-2015
+                    td CU-Engineering
+                    td -
+                    td 14/03/2015
+                  tr
+                    th(scope='row') 1699012
+                    td LineHackathon-2016
+                    td Line co.
+                    td 2nd Award
+                    td 20/04/2016
+              
+                
+			 
+			
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
     script(src="js/bootstrap.min.js")

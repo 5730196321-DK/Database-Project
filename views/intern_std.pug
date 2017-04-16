@@ -2,7 +2,6 @@ extends layout
 
 block content
     link(href='/css/extends/starter-template.css', rel='stylesheet')
-    link(href='/css/extends/login.css', rel='stylesheet')
     body
     .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
       .container
@@ -59,9 +58,49 @@ block content
                   a(href='index')
                     | Logout &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-log-out(style='font-size:16px;')
-        .col-sm-10
+        .col-sm-8
           .container-fluid
-            h2 To be Internship Page!
+            h1 Internship Information &nbsp; &nbsp;
+            button.btn.btn-lg.btn-primary(type='button') Edit
+            br
+            | You can manage your intership company here.
+            br
+            br
+            br
+            .row
+              .col-lg-8
+                h4 Company name  
+                input.form-control(type="text" value="LINE Thailand Corporation" disabled)
+              .col-lg-2
+                h4 Start date
+                input.form-control(type="date" value="28/05/17" disabled)
+              .col-lg-2
+                h4 End date
+                input.form-control(type="date" value="30/07/17" disabled)
+            br
+            .row
+              .col-lg-12
+                h4 Address
+                input.form-control(type="text" value="1 Empire tower, 41st floor, River wing west, South Sathorn road, Yannawa, Sathorn, Bangkok 10120" disabled)
+            br
+            .row
+              .col-lg-5
+                h4 Contractor Name
+                input.form-control(type="text" value="Ms.Cony Rabbit" disabled)
+              .col-lg-4
+                h4 Position
+                input.form-control(type="text" value="Human Resource" disabled)
+              .col-lg-3
+                h4 Phone
+                input.form-control(type="text" value="089-999-9999" disabled)
+        .col-sm-2(align="center")
+          h4 Approval Status
+          button.btn.btn-lg.btn-warning(type='button') waiting
+          br
+          br
+          br
+          h4 Book Status
+          button.btn.btn-lg.btn-success(type='button') printed
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
     script(src="js/bootstrap.min.js")
