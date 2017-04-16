@@ -2,22 +2,31 @@ extends layout
 
 block content
     link(href='/css/extends/starter-template.css', rel='stylesheet')
+    link(href='/css/extends/stickynote.css', rel='stylesheet')
     body
     .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
-      .container
-        .navbar-header
-          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand(href='index') Database-Project
-        .collapse.navbar-collapse
-          ul.nav.navbar-nav
-            li.active
-              a(href='#') Site
-            li
-              a(href='about') About
+      .row
+        .col-sm-6
+          .col-sm-1
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href='index') Database-Project
+          .collapse.navbar-collapse
+            ul.nav.navbar-nav
+              li.active
+                a(href='#') Site
+              li
+                a(href='about') About
+        .col-sm-4
+        .col-sm-2
+          .collapse.navbar-collapse
+            ul.nav.navbar-nav
+              li
+                a(href='#') STUDENT : 5730199921
     .container
       br
       br
@@ -31,8 +40,8 @@ block content
                     font(class="text-primary") | Home &nbsp; 
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-home(style='font-size:16px;' class="text-primary")
                 li
-                  a(href='account_std')
-                    | Account &nbsp;
+                  a(href='profile_std')
+                    | Profile &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-user(style='font-size:16px;')
                 li
                   a(href='grade_std')
@@ -58,7 +67,7 @@ block content
                   a(href='index')
                     | Logout &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-log-out(style='font-size:16px;')
-        .col-sm-10
+        .col-sm-6
           .container-fluid
             h1 Welcome back! <font class="text-primary">Student</font>
             br
@@ -70,28 +79,65 @@ block content
             br
             br
             br
-            .row
-              h4 Student Status Information
-              button.btn.btn-lg.btn-muted(type='button') Prohibited
-              | &nbsp; &nbsp;
-              button.btn.btn-lg.btn-muted(type='button') Study Abroad
-              | &nbsp; &nbsp;
-              button.btn.btn-lg.btn-muted(type='button') Leave
-              | &nbsp; &nbsp;
-              button.btn.btn-lg.btn-primary(type='button') Interned
-              | &nbsp; &nbsp;
-              button.btn.btn-lg.btn-muted(type='button') Graduated
+            br
+            br
             br
             .row
-              .col-sm-2(align="center")
-                h4 GPAX
-                button.btn.btn-lg.btn-success(type='button') 3.14
-              .col-sm-2(align="center")
-                h4 GPA
-                button.btn.btn-lg.btn-success(type='button') 3.60
+              h4 Student Status Information
+              button.btn.btn-md.btn-default(type='button') Prohibited
+              | &nbsp; &nbsp;
+              button.btn.btn-md.btn-default(type='button') Study Abroad
+              | &nbsp; &nbsp;
+              button.btn.btn-md.btn-default(type='button') Leave
+              | &nbsp; &nbsp;
+              button.btn.btn-md.btn-info(type='button') Interned
+              | &nbsp; &nbsp;
+              button.btn.btn-md.btn-default(type='button') Graduated
+            br
+            .row
               .col-sm-3(align="center")
-                h4 Incoming
-                button.btn.btn-lg.btn-danger(type='button') Final
+                h4 Faculty
+                button.btn.btn-md.btn-default(type='button') Engineering
+              .col-sm-3(align="center")
+                h4 Department
+                button.btn.btn-md.btn-default(type='button') Computer
+              .col-sm-6(align="center")
+                h4 Academic Plan
+                button.btn.btn-md.btn-default(type='button') Bachelor Degree (4ys)
+        .col-sm-4
+          .formholder
+            .randompad
+              br
+              br
+              h2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Countdown 
+              span.glyphicon.glyphicon-hourglass(style='font-size:50px;')
+              br
+              br
+              br
+              .row
+                .col-sm-6(align="center")
+                  h4 Final Exam.
+                  button.btn.btn-md.btn-warning(type='button') 23
+                .col-sm-6(align="center")
+                  h4 CU-CAS
+                  button.btn.btn-md.btn-warning(type='button') 31
+              br            
+              .row
+                .col-sm-6(align="center")
+                  h4 Midterm Exam.
+                  button.btn.btn-md.btn-danger(type='button') OVER
+                .col-sm-6(align="center")
+                  h4 Withdraw Period
+                  button.btn.btn-md.btn-danger(type='button') OVER  
+              br
+              .row
+                .col-sm-6(align="center")
+                  h4 Intern Book
+                  button.btn.btn-md.btn-danger(type='button') OVER
+                .col-sm-6(align="center")
+                  h4 Graduated Req.
+                  button.btn.btn-md.btn-danger(type='button') OVER
+            
 
 
 

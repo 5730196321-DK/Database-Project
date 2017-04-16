@@ -2,23 +2,30 @@ extends layout
 
 block content
     link(href='/css/extends/starter-template.css', rel='stylesheet')
-    link(href='/css/extends/login.css', rel='stylesheet')
     body
     .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
-      .container
-        .navbar-header
-          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand(href='index') Database-Project
-        .collapse.navbar-collapse
-          ul.nav.navbar-nav
-            li.active
-              a(href='#') Site
-            li
-              a(href='about') About
+      .row
+        .col-sm-6
+          .col-sm-1
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href='index') Database-Project
+          .collapse.navbar-collapse
+            ul.nav.navbar-nav
+              li.active
+                a(href='#') Site
+              li
+                a(href='about') About
+        .col-sm-4
+        .col-sm-2
+          .collapse.navbar-collapse
+            ul.nav.navbar-nav
+              li
+                a(href='#') STUDENT : 5730199921
     .container
       br
       br
@@ -32,8 +39,8 @@ block content
                     | Home &nbsp; 
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-home(style='font-size:16px;')
                 li
-                  a(href='account_std')
-                    | Account &nbsp;
+                  a(href='profile_std')
+                    | Profile &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-user(style='font-size:16px;')
                 li
                   a(href='grade_std')
@@ -59,9 +66,75 @@ block content
                   a(href='index')
                     | Logout &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-log-out(style='font-size:16px;')
-        .col-sm-10
+        .col-sm-8
           .container-fluid
-            h2 To be Search Page!
+            h1 Search &nbsp; &nbsp;
+            br
+            br
+            | You can search a courses information here.
+            br
+            br
+            .row
+              .col-lg-2
+                h4 Semester 
+                button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                  | 2016/2 &nbsp;
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') 2016/1
+                  li
+                    a(href='#') 2017/1
+              .col-lg-2
+                h4 Course ID  
+                input.form-control(type="text" value="2110422")
+              .col-lg-6
+                h4 Course Name
+                input.form-control(type="text" value="DB MGT SYS DESIGN")
+              .col-lg-2
+                br
+                button.btn.btn-lg.btn-warning(type='button') Search
+            br
+            .row
+              table.table.table-striped
+                thead
+                  tr
+                    th Course No.
+                    th Course Name
+                    th Section
+                    th Prof.
+                    th Credit
+                tbody
+                  tr
+                    th(scope='row' ) 2110101
+                    td COMP PROG
+                    td &nbsp; &nbsp; &nbsp; 1
+                    td PJW
+                    td &nbsp; &nbsp; 3
+                  tr
+                    th(scope='row' ) 2110101
+                    td COMP PROG
+                    td &nbsp; &nbsp; &nbsp; 2
+                    td SPJ
+                    td &nbsp; &nbsp; 3
+                  tr
+                    th(scope='row') 2110422
+                    td DB MGT SYS DESIGN
+                    td &nbsp; &nbsp; &nbsp; 1
+                    td TSS
+                    td &nbsp; &nbsp; 3
+                  tr
+                    th(scope='row') 2110422
+                    td DB MGT SYS DESIGN
+                    td &nbsp; &nbsp; &nbsp; 2
+                    td CRN
+                    td &nbsp; &nbsp; 3
+                  tr
+                    th(scope='row') 2110422
+                    td DB MGT SYS DESIGN
+                    td &nbsp; &nbsp; &nbsp; 3
+                    td WWW
+                    td &nbsp; &nbsp; 3
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
     script(src="js/bootstrap.min.js")
