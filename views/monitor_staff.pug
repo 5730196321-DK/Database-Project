@@ -62,9 +62,22 @@ block content
                   a(href='index')
                     | Logout &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-log-out(style='font-size:16px;')
-        .col-sm-6
+        .col-sm-10
           .container-fluid
-            h1 Monitor : Staff Page!
-
+            h1 Monitoring Systems
+            br
+            br
+            | See system status here.
+            br
+            br  
+            .row
+              .col-sm-6
+                #graph(style='min-width: 310px; height: 400px; margin: 0 auto')
+              .col-sm-6
+                #graph2(style='min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto')
+    
+    script(src='http://code.highcharts.com/highcharts.js')
+    script(src='http://code.highcharts.com/modules/exporting.js')
+    script(src='js/graph.js')          
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
     script(src="js/bootstrap.min.js")

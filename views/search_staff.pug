@@ -62,9 +62,108 @@ block content
                   a(href='index')
                     | Logout &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-log-out(style='font-size:16px;')
-        .col-sm-6
+        .col-sm-10
           .container-fluid
-            h1 Search Data : Staff Page!
+            h1 Search &nbsp; &nbsp;
+            br
+            br
+            | You can search a student information here.
+            br
+            br
+            .row
+              .col-lg-1
+                h5 Year 
+                button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                  |  1 &nbsp;
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') 2
+                  li
+                    a(href='#') 3
+                  li
+                    a(href='#') 4
+                  li
+                    a(href='#') 5
+              .col-lg-2
+                h5 Student ID  
+                input.form-control(type="text" value="5734444421")
+              .col-lg-3
+                h5 Student Name
+                input.form-control(type="text" value="Brown Bigbear")
+              .col-lg-3
+                h5 Faculty 
+                button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                  | Faculty of Engineering &nbsp;
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Faculty of Arts
+                  li
+                    a(href='#') Faculty of Architecture
+                  li
+                    a(href='#') Faculty of Education
+                  li
+                    a(href='#') Faculty of Law
+              .col-lg-2
+                br
+                button.btn.btn-lg.btn-warning(type='button') Search
+            br
+            .row
+              table.table.table-striped
+                thead
+                  tr
+                    th Student No.
+                    th Student Name
+                    th Email
+                    th Phone
+                    th Professor
+                tbody
+                  tr
+                    td
+                      a(href='#')
+                        div(style='height:100%;width:100%')
+                          | 5734444421
+                    td Brown Bigbear
+                    td Brown@gmail.com
+                    td 084-444-444
+                    td &nbsp; &nbsp; SPJ
+                  tr
+                    td
+                      a(href='#')
+                        div(style='height:100%;width:100%')
+                        | 5730001021
+                    td Cony Rabbit
+                    td Cony@gmail.com
+                    td 081-111-111
+                    td &nbsp; &nbsp; WWW
+                  tr
+                    td
+                      a(href='#')
+                        div(style='height:100%;width:100%')
+                        | 5730241021
+                    td Tracer Overwatch
+                    td Tracer@gmail.com
+                    td 084-568-123
+                    td &nbsp; &nbsp; TSS
+                  tr
+                    td
+                      a(href='#')
+                        div(style='height:100%;width:100%')
+                        | 5730969621
+                    td Genji Overwatch
+                    td Genji@gmail.com
+                    td 087-511-556
+                    td &nbsp; &nbsp; CRN
+                  tr
+                    td
+                      a(href='#')
+                        div(style='height:100%;width:100%')
+                        | 5734444421
+                    td Mercy Overwatch
+                    td mercy@gmail.com
+                    td 081-754-526
+                    td &nbsp; &nbsp; SPJ
 
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
