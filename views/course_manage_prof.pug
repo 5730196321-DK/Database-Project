@@ -62,7 +62,7 @@ block content
                   a(href='index')
                     | Logout &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-log-out(style='font-size:16px;')
-        .col-sm-10
+        .col-sm-8
           .container-fluid
             h1 Courses List
             br
@@ -70,25 +70,57 @@ block content
             | Courses which you are teaching appears here.
             br
             br
-            .row
-              .col-sm-6(align="center")
-                h3 Required Courses
-              .col-sm-6(align="center")
-                h3 Approved Courses
+            h3 <font class="text-primary">2110422 DB MGT SYS DESIGN (1)</font> Courses Member Listing
             br
-            .row
-              .col-sm-6(align="center")
-                a(href='course_manage_prof')
-                  button.btn.btn-lg.btn-default(type='button') 2110422 DB MGT SYS DESIGN (1)
-              .col-sm-6(align="center")
-                button.btn.btn-lg.btn-default(type='button') 2110413 COMP SECURITY (1)
-            br
-            .row
-              .col-sm-6(align="center")
-                button.btn.btn-lg.btn-default(type='button') 2110101 COMP PROG (2)
-                  
-            
-
-
+            .col-sm-1
+            .col-sm-11
+              table.table.table
+                thead
+                  tr
+                    th Student ID
+                    th Student Name
+                    th Email
+                    th Attendant
+                tbody
+                  tr(class="danger")
+                    th 5730199721
+                    td Ms. Cony Rabbit
+                    td cony@line.me
+                    td &nbsp; &nbsp; &nbsp; 79.0%
+                  tr(class="warning")
+                    th 5730199821
+                    td Ms. Sally Theduck
+                    td sally@line.me
+                    td &nbsp; &nbsp; &nbsp; 81.0%
+                  tr(class="warning")
+                    th 5730199821
+                    td Ms. Sally Theduck
+                    td sally@line.me
+                    td &nbsp; &nbsp; &nbsp; 85.0%
+                  tr
+                    th 5730199821
+                    td Ms. Sally Theduck
+                    td sally@line.me
+                    td &nbsp; &nbsp; &nbsp; 86.25%
+                  tr
+                    th 5730199921
+                    td Mr. Brown Bigbear
+                    td brown@line.me
+                    td &nbsp; &nbsp; &nbsp; 100.0%
+                  tr
+                    th 5730199921
+                    td Mr. Brown Bigbear
+                    td brown@line.me
+                    td &nbsp; &nbsp; &nbsp; 100.0%
+                  tr
+                    th 5730199921
+                    td Mr. Brown Bigbear
+                    td brown@line.me
+                    td &nbsp; &nbsp; &nbsp; 100.0%
+                  tr
+                    th 5730199921
+                    td Mr. Brown Bigbear
+                    td brown@line.me
+                    td &nbsp; &nbsp; &nbsp; 100.0%          
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
     script(src="js/bootstrap.min.js")

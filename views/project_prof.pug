@@ -62,9 +62,50 @@ block content
                   a(href='index')
                     | Logout &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-log-out(style='font-size:16px;')
-        .col-sm-6
+        .col-sm-10
           .container-fluid
-            h1 Projects : Professor Page!
+            h1 Projects List
+            br
+            br
+            | Projects which is your in responsible is listing here.
+            br
+            br
+            br
+            table.table.table-striped
+              thead
+                tr
+                  th Project ID
+                  th Project Name
+                  th Project Scope
+                  th Status
+                  th Project Member
+                  th Email
+                  th Telephone
+              tbody
+                tr
+                  th(scope='row') 1102011
+                  td SecureBit v2  
+                  td Security
+                  td Analysis
+                  td Mr. Brown Bigbear
+                  td brown@line.me
+                  td 089-999-9999
+                tr
+                  th(scope='row') 
+                  td  
+                  td 
+                  td
+                  td Ms. Cony Rabbit
+                  td cony@line.me
+                  td 087-777-7777
+                tr
+                  th(scope='row') 1102012
+                  td JARVIS 4.0  
+                  td AI
+                  td Implement
+                  td Ms. Sally Theduck
+                  td sally@line.me
+                  td 086-666-6666
 
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')

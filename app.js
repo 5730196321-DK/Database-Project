@@ -20,6 +20,7 @@ var search_std = require('./routes/search_std');
 var index_prof = require('./routes/index_prof');
 var profile_prof = require('./routes/profile_prof');
 var course_prof = require('./routes/course_prof');
+var course_manage_prof = require('./routes/course_manage_prof');
 var advisee_prof = require('./routes/advisee_prof');
 var project_prof = require('./routes/project_prof');
 var download_prof = require('./routes/download_prof')
@@ -61,6 +62,7 @@ app.use('/intern_std', intern_std);
 app.use('/index_prof', index_prof);
 app.use('/profile_prof', profile_prof);
 app.use('/course_prof', course_prof);
+app.use('/course_manage_prof', course_manage_prof);
 app.use('/advisee_prof', advisee_prof);
 app.use('/project_prof', project_prof);
 app.use('/download_prof', download_prof);
