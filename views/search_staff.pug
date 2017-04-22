@@ -22,10 +22,12 @@ block content
                 a(href='about') About
         .col-sm-4
         .col-sm-2
-          .collapse.navbar-collapse
-            ul.nav.navbar-nav
-              li
-                a(href='#') &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STAFF : NAN
+          .col-sm-2
+          .col-sm-10
+            .collapse.navbar-collapse
+              ul.nav.navbar-nav
+                li
+                  a(href='#') #{user_val}
     .container
       br
       br
@@ -59,7 +61,7 @@ block content
                     font(class="text-primary") | Search &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-search(style='font-size:16px;' class="text-primary")
                 li
-                  a(href='index')
+                  a(href='/logout')
                     | Logout &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-log-out(style='font-size:16px;')
         .col-sm-10

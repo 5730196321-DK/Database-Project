@@ -40,11 +40,7 @@ block content
                     | Welcome &nbsp; 
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-asterisk(style='font-size:16px;')
                 li
-                  a(href='index_prof')
-                    | Professor &nbsp; 
-                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-sunglasses(style='font-size:16px;')
-                li
-                  a(href='index_staff')
+                  a(href='login_staff')
                     | Staff &nbsp; 
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-wrench(style='font-size:16px;')
         .col-sm-6
@@ -66,18 +62,17 @@ block content
         .col-sm-4
             .formholder
               .randompad
-                h3 Authentication
-                br
-                | StudentID
-                input(type='username',placeholder='10 digits')
-                | Password
-                input(type='password',placeholder='Reg-CU Password')
-                br
-                .checkbox
-                  label
-                    input(type='checkbox')
-                    |  checking this box mean agree to the agreement and privacy and cookies statement.
-                a(href='index_std')
+                form(action='/authenticate_prof', method='post')
+                  h3 Authentication
+                  br
+                  | Professor Abbreviation 
+                  input(name='username',type='username',onkeypress='return event.charCode < 48 || event.charCode > 57' ,placeholder='3 characters')
+                  | Password
+                  input(name='password',type='password',placeholder='Password')
+                  br
+                  | * Clicking "Login" mean agree to the agreement and privacy and cookies statement.
+                  br
+                  br
                   input(type='submit', value='Login')
       script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
       script(src='js/login.js')
