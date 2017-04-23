@@ -63,9 +63,11 @@ block content
                   a(href='/logout')
                     | Logout &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-log-out(style='font-size:16px;')
-        .col-sm-6
+        .col-sm-10
           .container-fluid
-            h1 Welcome back! <font class="text-primary">Professor</font>
+            h1 Welcome back! &nbsp;
+            a(href='profile_prof')
+              font(class='text-primary' size = '6')= 'Prof. ' + results[0].info+' '+results[1].info
             br
             br
             | Please select menu on navigation stack at the left side.
@@ -81,55 +83,27 @@ block content
             br
             br
             .row
-              .col-sm-3(align="center")
-                h4 Faculty
-                button.btn.btn-md.btn-default(type='button') Engineering
-              .col-sm-3(align="center")
-                h4 Department
-                button.btn.btn-md.btn-default(type='button') Computer
-              .col-sm-2(align="center")
-                h4 Advisee
-                button.btn.btn-md.btn-default(type='button') 12
-              .col-sm-2(align="center")
-                h4 Project
-                button.btn.btn-md.btn-default(type='button') 2
-              .col-sm-2(align="center")
-                h4 Course
-                button.btn.btn-md.btn-default(type='button') 3
-        .col-sm-4
-          .formholder
-            .randompad
-              br
-              h2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Countdown 
-              span.glyphicon.glyphicon-hourglass(style='font-size:50px;')
-              br
-              br
-              .row
-                .col-sm-6(align="center")
-                  h4 Final Exam.
-                  button.btn.btn-md.btn-warning(type='button') 23
-                .col-sm-6(align="center")
-                  h4 CU-CAS
-                  button.btn.btn-md.btn-warning(type='button') 31
-              br            
-              .row
-                .col-sm-6(align="center")
-                  h4 Midterm Exam.
-                  button.btn.btn-md.btn-danger(type='button') OVER
-                .col-sm-6(align="center")
-                  h4 Withdraw Period
-                  button.btn.btn-md.btn-danger(type='button') OVER  
-              br
-              .row
-                .col-sm-6(align="center")
-                  h4 Intern Book
-                  button.btn.btn-md.btn-danger(type='button') OVER
-                .col-sm-6(align="center")
-                  h4 Graduated Req.
-                  button.btn.btn-md.btn-danger(type='button') OVER
-            
-
-
+              .col-sm-8
+                .col-sm-3(align="center")
+                  h4 Faculty
+                  button.btn.btn-md.btn-default(type='button')
+                    = results[2].info
+                .col-sm-3(align="center")
+                  h4 Department
+                  button.btn.btn-md.btn-default(type='button')
+                    = results[3].info
+                .col-sm-2(align="center")
+                  h4 Course
+                  button.btn.btn-md.btn-default(type='button')
+                    = results[4].info
+                .col-sm-2(align="center")
+                  h4 Advisee
+                  button.btn.btn-md.btn-default(type='button')
+                    = results[5].info
+                .col-sm-2(align="center")
+                  h4 Project
+                  button.btn.btn-md.btn-default(type='button')
+                    = results[6].info
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
     script(src="js/bootstrap.min.js")

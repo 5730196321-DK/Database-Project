@@ -70,25 +70,27 @@ block content
             | Courses which you are teaching appears here.
             br
             br
-            .row
-              .col-sm-6(align="center")
-                h3 Required Courses
-              .col-sm-6(align="center")
-                h3 Approved Courses
-            br
-            .row
-              .col-sm-6(align="center")
-                a(href='course_manage_prof')
-                  button.btn.btn-lg.btn-default(type='button') 2110422 DB MGT SYS DESIGN (1)
-              .col-sm-6(align="center")
-                button.btn.btn-lg.btn-default(type='button') 2110413 COMP SECURITY (1)
-            br
-            .row
-              .col-sm-6(align="center")
-                button.btn.btn-lg.btn-default(type='button') 2110101 COMP PROG (2)
-                  
-            
-
+            .col-sm-8
+              table.table.table-striped
+                thead
+                  tr
+                    th #
+                    th Course ID
+                    th Course Name
+                    th Section
+                    th Semester
+                    th Year
+                    th Credit
+                tbody
+                  each result,index in results
+                    tr
+                      td= index+1
+                      td= result.cid
+                      td= result.cname
+                      td(align='center')= result.section
+                      td(align='center')= result.semester
+                      td= result.eyear
+                      td(align='center')= result.credit
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
     script(src="js/bootstrap.min.js")

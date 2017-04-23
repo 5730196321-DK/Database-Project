@@ -1,8 +1,10 @@
+var app = require('../app');
+
 var fs = require('fs')
  , path = require('path')
  , Sequelize = require('sequelize')
  , lodash = require('lodash')
- , sequelize = new Sequelize('DB_Project', 'root', '12761')
+ , sequelize = new Sequelize(app.options.database, app.options.user, app.options.password)
  , db = {}
 
 fs

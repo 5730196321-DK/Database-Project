@@ -74,39 +74,23 @@ block content
             table.table.table-striped
               thead
                 tr
+                  th #
                   th Project ID
                   th Project Name
-                  th Project Scope
-                  th Status
-                  th Project Member
+                  th Scope
+                  th Responsible Student
                   th Email
                   th Telephone
               tbody
-                tr
-                  th(scope='row') 1102011
-                  td SecureBit v2  
-                  td Security
-                  td Analysis
-                  td Mr. Brown Bigbear
-                  td brown@line.me
-                  td 089-999-9999
-                tr
-                  th(scope='row') 
-                  td  
-                  td 
-                  td
-                  td Ms. Cony Rabbit
-                  td cony@line.me
-                  td 087-777-7777
-                tr
-                  th(scope='row') 1102012
-                  td JARVIS 4.0  
-                  td AI
-                  td Implement
-                  td Ms. Sally Theduck
-                  td sally@line.me
-                  td 086-666-6666
-
-
+                each result,index in results
+                  tr
+                    td= index+1
+                    td= result.pjid
+                    td= result.pname
+                    td= result.field
+                    td= result.sid+'  '+result.fname+' '+result.sname
+                    td= result.email
+                    td= result.tel 
+                    
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
     script(src="js/bootstrap.min.js")

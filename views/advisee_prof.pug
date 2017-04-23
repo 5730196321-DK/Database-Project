@@ -74,110 +74,27 @@ block content
             table.table.table
               thead
                 tr
-                  th Year
+                  th #
                   th Student ID
+                  th Gender
                   th Student Name
                   th Email
                   th Telephone
-                  th GPAX
-                  th Status
+                  th &nbsp; Probation
+                  th &nbsp; Abroad
+                  th &nbsp; Leave
               tbody
-                tr(class="warning")
-                  td &nbsp;&nbsp; 2
-                  td 5830199721
-                  td Ms. Cony Rabbit
-                  td cony@line.me
-                  td 087-777-7777
-                  td &nbsp;1.99
-                  td Pro (H)
-                tr(class="danger")
-                  td &nbsp;&nbsp; 2
-                  td 5830199821
-                  td Ms. Sally Theduck
-                  td sally@line.me
-                  td 086-666-6666
-                  td &nbsp;1.70
-                  td Pro (L)              
-                tr
-                  td &nbsp;&nbsp; 3
-                  td 5730199921
-                  td Mr. Brown BigBear
-                  td brown@line.me
-                  td 089-999-9999
-                  td &nbsp;4.00
-                  td &nbsp; &nbsp; &nbsp;-
-                tr
-                  td &nbsp;&nbsp; 3
-                  td 5730199921
-                  td Mr. Brown BigBear
-                  td brown@line.me
-                  td 089-999-9999
-                  td &nbsp;4.00
-                  td &nbsp; &nbsp; &nbsp;-
-                tr
-                  td &nbsp;&nbsp; 3
-                  td 5730199921
-                  td Mr. Brown BigBear
-                  td brown@line.me
-                  td 089-999-9999
-                  td &nbsp;4.00
-                  td &nbsp; &nbsp; &nbsp;-
-                tr
-                  td &nbsp;&nbsp; 3
-                  td 5730199921
-                  td Mr. Brown BigBear
-                  td brown@line.me
-                  td 089-999-9999
-                  td &nbsp;4.00
-                  td &nbsp; &nbsp; &nbsp;-
-                tr
-                  td &nbsp;&nbsp; 3
-                  td 5730199921
-                  td Mr. Brown BigBear
-                  td brown@line.me
-                  td 089-999-9999
-                  td &nbsp;4.00
-                  td &nbsp; &nbsp; &nbsp;-
-                tr
-                  td &nbsp;&nbsp; 3
-                  td 5730199921
-                  td Mr. Brown BigBear
-                  td brown@line.me
-                  td 089-999-9999
-                  td &nbsp;4.00
-                  td &nbsp; &nbsp; &nbsp;-
-                tr
-                  td &nbsp;&nbsp; 3
-                  td 5730199921
-                  td Mr. Brown BigBear
-                  td brown@line.me
-                  td 089-999-9999
-                  td &nbsp;4.00
-                  td &nbsp; &nbsp; &nbsp;-
-                tr
-                  td &nbsp;&nbsp; 3
-                  td 5730199921
-                  td Mr. Brown BigBear
-                  td brown@line.me
-                  td 089-999-9999
-                  td &nbsp;4.00                  
-                  td &nbsp; &nbsp; &nbsp;-
-                tr
-                  td &nbsp;&nbsp; 3
-                  td 5730199921
-                  td Mr. Brown BigBear
-                  td brown@line.me
-                  td 089-999-9999
-                  td &nbsp;4.00
-                  td &nbsp; &nbsp; &nbsp;-
-                tr
-                  td &nbsp;&nbsp; 3
-                  td 5730199921
-                  td Mr. Brown BigBear
-                  td brown@line.me
-                  td 089-999-9999
-                  td &nbsp;4.00
-                  td &nbsp; &nbsp; &nbsp;-    
+                each result,index in results
+                  tr
+                    td= index+1
+                    td= result.sid
+                    td(align='center')= result.gender
+                    td= result.fname+' '+result.sname
+                    td= result.email
+                    td= result.tel 
+                    td(align='center')= result.probation
+                    td(align='center')= result.studyabroad
+                    td(align='center')= result.leaving
         
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
     script(src="js/bootstrap.min.js")

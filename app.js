@@ -1,3 +1,12 @@
+// !!!!!!!!!!!!!!!!!! Setup mySQL Password Here !!!!!!!!!!!!!!!!!!!!!
+var options = {
+    host: 'localhost',
+    user: 'root',
+    password: '12761',
+    database: 'DB_Project'
+};
+exports.options = options;
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -15,15 +24,6 @@ var session = require('express-session');
 var application = require('./routes/application');
 var unauthorized = require('./routes/unauthorized');
 var MySQLStore = require('express-mysql-session')(session);
-
-// !!!!!!!!!!!!!!!!!! Setup mySQL Password Here !!!!!!!!!!!!!!!!!!!!!
-var options = {
-    host: 'localhost',
-    user: 'root',
-    password: '12761',
-    database: 'DB_Project'
-};
-var sessionStore = new MySQLStore(options);
 
 var index = require('./routes/index');
 var about = require('./routes/about');
@@ -74,6 +74,9 @@ app.use(session({ key: 'session_cookie_name',
     saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Session store
+var sessionStore = new MySQLStore(options);
 
 // Student Authenticate Checker
 app.get('/index_std', application.IsAuthenticated, index_std);
