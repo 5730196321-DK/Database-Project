@@ -13,6 +13,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mysql = require('mysql');
 
 // Authentication
 SALT_WORK_FACTOR = 12;
@@ -121,6 +122,66 @@ app.post('/authenticate_staff',
 
 // Logout Listener
 app.get('/logout', application.destroySession);
+
+var connection = mysql.createConnection(options);
+connection.connect();
+
+// Query Listener
+var search_staff_s = require('./routes/search_staff_s')
+app.use('/search_staff_s', search_staff_s);
+app.post('/search_staff_s', function(req, res){
+    var test = connection.query('SELECT * FROM Student WHERE fname=\''
+    + req.body.input_fname + '\' OR sid=\'' + req.body.input_sid +'\' OR sname=\''
+    + req.body.input_sname + '\' OR email=\'' + req.body.input_email +'\' OR tel=\''
+    + req.body.input_tel + '\' OR ssn=\'' + req.body.input_ssn + '\';',
+    function (err, results) {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      console.error(results);
+      res.render('search_staff_s', { title: 'Search', user_val: req.user.username, results: results });
+    }
+  );
+});
+
+var search_staff_p = require('./routes/search_staff_p')
+app.use('/search_staff_p', search_staff_p);
+app.post('/search_staff_p', function(req, res){
+    var test = connection.query('SELECT * FROM Professor WHERE fname=\''
+    + req.body.input_fname + '\' OR pab=\'' + req.body.input_pab +'\' OR sname=\''
+    + req.body.input_sname + '\' OR email=\'' + req.body.input_email +'\' OR tel=\''
+    + req.body.input_tel + '\' OR ssn=\'' + req.body.input_ssn + '\';',
+    function (err, results) {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      console.error(results);
+      res.render('search_staff_p', { title: 'Search', user_val: req.user.username, results: results });
+    }
+  );
+});
+
+var search_staff_f = require('./routes/search_staff_f')
+app.use('/search_staff_f', search_staff_f);
+app.post('/search_staff_f', function(req, res){
+    var test = connection.query('SELECT * FROM Staff WHERE fname=\''
+    + req.body.input_fname + '\' OR role=\'' + req.body.input_role +'\' OR sname=\''
+    + req.body.input_sname + '\' OR email=\'' + req.body.input_email +'\' OR tel=\''
+    + req.body.input_tel + '\' OR ssn=\'' + req.body.input_ssn + '\';',
+    function (err, results) {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      console.error(results);
+      res.render('search_staff_f', { title: 'Search', user_val: req.user.username, results: results });
+    }
+  );
+});
+
+
 
 app.use('/', index);
 app.use('/index', index);

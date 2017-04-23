@@ -67,56 +67,52 @@ block content
         .col-sm-10
           .container-fluid
             h1 Profile Manager &nbsp; &nbsp;
-            button.btn.btn-lg.btn-primary(type='button') Edit
+            br
             img.responsive-img(src="images/brown.png" align="right" style='max-height:150px;' alt="face")
             br
-            | You can manage your profile here.
+            | All we know about you.
             br
             br
             br
-            .row
-              .col-lg-1
-                h4 Prefix
-                br 
-                button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false' disabled)
-                  | Mr. &nbsp;
-                  span.caret
-                ul.dropdown-menu
-                  li
-                    a(href='#') Mr.
-                  li
-                    a(href='#') Ms.
-              .col-lg-3
-                h4 First name  
-                input.form-control(type="text" value="Brown" disabled)
-              .col-lg-3
-                h4 Last name  
-                input.form-control(type="text" value="Bigbear" disabled)
-              .col-lg-2
-                h4 Birth Date
-                input.form-control(type="date" value="14/03/15" disabled)
             br
-            .row
-              .col-lg-9
-                h4 Address
-                input.form-control(type="text" value="1 Empire tower, 41st floor, River wing west, South Sathorn road, Yannawa, Sathorn, Bangkok 10120" disabled)
-            br
-            .row
-              .col-lg-3
-                h4 Email Address
-                input.form-control(type="text" value="brown@line.me" disabled)
-              .col-lg-3
-                h4 Phone
-                input.form-control(type="text" value="089-999-9999" disabled)
-            br
-            br
-            .row
-              .col-sm-7
-                |
-              .col-sm-3
-                button.btn.btn-md.btn-success(type='save_button' disabled ) Save 
-                | &nbsp;
-                button.btn.btn-md.btn-danger(type='button' disabled) Cancel
+            each result in results
+              .row
+                .col-lg-3
+                  h4 Citizen ID
+                  input.form-control(type="text" value=result.ssn disabled)
+                .col-lg-2
+                  h4 Since
+                  input.form-control(type="text" value=result.since disabled)
+                .col-lg-2
+                  h4 Role  
+                  input.form-control(type="text" value=result.role disabled)
+              br
+              .row
+                .col-lg-3
+                  h4 First Name
+                  input.form-control(type="text" value=result.fname disabled)
+                .col-lg-3
+                  h4 Last name  
+                  input.form-control(type="text" value=result.sname disabled)
+                .col-lg-1
+                  h4 Sex
+                  input.form-control(type="text" value=result.gender disabled)
+                .col-lg-2
+                  h4 Birth Date
+                  input.form-control(type="date" value=result.bdate2 disabled)
+              br
+              .row
+                .col-lg-9
+                  h4 Address
+                  input.form-control(type="text" value=result.houseno + ' ' + result.road + ', ' + result.subdistrict + ', ' + result.district + ', ' + result.province + ' ' + result.pcode disabled)
+              br
+              .row
+                .col-lg-3
+                  h4 Email Address
+                  input.form-control(type="text" value=result.email disabled)
+                .col-lg-3
+                  h4 Phone No.
+                  input.form-control(type="text" value=result.tel disabled)
                 
       script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
       script(src="js/bootstrap.min.js")
