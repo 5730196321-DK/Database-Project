@@ -44,22 +44,18 @@ block content
                   a(href='#')
                     font(class="text-primary") | Profile &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-user(style='font-size:16px;' class="text-primary")
-                li
-                  a(href='upload_staff')
-                    | Upload &nbsp;
-                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-cloud-upload(style='font-size:16px;')
-                li
-                  a(href='download_staff')
-                    | Download &nbsp;
-                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-cloud-download(style='font-size:16px;')
-                li
-                  a(href='monitor_staff')
-                    | Monitor &nbsp;
+                li      
+                  a(href='report_staff')
+                    | Report &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-stats(style='font-size:16px;')
                 li
-                  a(href='search_staff')
+                  a(href='search_info')
                     | Search &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-search(style='font-size:16px;')
+                li      
+                  a(href='edit_record')
+                    | Edit Record &nbsp;
+                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-wrench(style='font-size:16px;')
                 li
                   a(href='/logout')
                     | Logout &nbsp;
@@ -95,7 +91,7 @@ block content
                   h4 Last name  
                   input.form-control(type="text" value=result.sname disabled)
                 .col-lg-1
-                  h4 Sex
+                  h4 Gender
                   input.form-control(type="text" value=result.gender disabled)
                 .col-lg-2
                   h4 Birth Date

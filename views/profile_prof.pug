@@ -54,10 +54,14 @@ block content
                   a(href='project_prof')
                     | Projects &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-file(style='font-size:16px;')
+                li      
+                  a(href='report_prof')
+                    | Report &nbsp;
+                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-stats(style='font-size:16px;')
                 li
-                  a(href='download_prof')
-                    | Download &nbsp;
-                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-cloud-download(style='font-size:16px;')
+                  a(href='search_info_prof')
+                    | Search &nbsp;
+                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-search(style='font-size:16px;')
                 li
                   a(href='/logout')
                     | Logout &nbsp;
@@ -96,7 +100,7 @@ block content
                   h4 Last name  
                   input.form-control(type="text" value=result.sname disabled)
                 .col-lg-1
-                  h4 Sex
+                  h4 Gender
                   input.form-control(type="text" value=result.gender disabled)
                 .col-lg-2
                   h4 Birth Date

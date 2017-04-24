@@ -44,22 +44,18 @@ block content
                   a(href='profile_staff')
                     | Profile &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-user(style='font-size:16px;')
-                li
-                  a(href='upload_staff')
-                    | Upload &nbsp;
-                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-cloud-upload(style='font-size:16px;')
-                li
-                  a(href='download_staff')
-                    | Download &nbsp;
-                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-cloud-download(style='font-size:16px;')
-                li
-                  a(href='monitor_staff')
-                    | Monitor &nbsp;
+                li      
+                  a(href='report_staff')
+                    | Report &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-stats(style='font-size:16px;')
                 li
                   a(href='#')
                     font(class="text-primary") | Search &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-search(style='font-size:16px;' class="text-primary")
+                li      
+                  a(href='edit_record')  
+                    | Edit Record &nbsp;
+                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-wrench(style='font-size:16px;')
                 li
                   a(href='/logout')
                     | Logout &nbsp;
@@ -69,7 +65,7 @@ block content
             h1 Search &nbsp; &nbsp;
             br
             br
-            | You can search a student information here.
+            | You can search a basic information here.
             br
             br
             br
@@ -80,9 +76,9 @@ block content
                   h4.panel-title
                     a(data-toggle='collapse', data-parent='#accordion', href='#collapse1')
                       | Student Database
-                #collapse1.panel-collapse.collapse.in
+                #collapse1.panel-collapse.collapse
                   .panel-body
-                    form(method='post' action='/search_staff_s')
+                    form(method='post' action='/search_info_s')
                       .row
                         .col-sm-1
                         .col-sm-3
@@ -116,7 +112,7 @@ block content
                       | Professor Database
                 #collapse2.panel-collapse.collapse
                   .panel-body
-                    form(method='post' action='/search_staff_p')
+                    form(method='post' action='/search_info_p')
                       .row
                         .col-sm-1
                         .col-sm-3
@@ -150,7 +146,7 @@ block content
                       | Staff Database
                 #collapse3.panel-collapse.collapse
                   .panel-body
-                    form(method='post' action='/search_staff_f')
+                    form(method='post' action='/search_info_f')
                       .row
                         .col-sm-1
                         .col-sm-3
@@ -177,6 +173,32 @@ block content
                               input.form-control(type='text' name='input_tel' placeholder='9-10 digits')
                             .col-sm-3
                               button.btn.btn-md.btn-warning(type='submit') Search
+            br
+            h2 Search Result
+            br
+            br
+            table.table.table
+              thead
+                tr
+                  th Abv.
+                  th Gender
+                  th Professor Name
+                  th Advanced
+                  th Since
+                  th Live In
+                  th Email
+                  th Telephone
+              tbody
+                each result in results
+                  tr
+                    td= result.pab
+                    td(align='center')= result.gender
+                    td= result.fname + ' ' + result.sname
+                    td= result.advanced
+                    td= result.since
+                    td= result.district + ', ' + result.province
+                    td= result.email
+                    td= result.tel        
             
                     
 

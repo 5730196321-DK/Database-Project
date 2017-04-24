@@ -20,12 +20,14 @@ block content
                 a(href='#') Site
               li
                 a(href='about') About
-        .col-sm-5
-        .col-sm-1
-          .collapse.navbar-collapse
-            ul.nav.navbar-nav
-              li
-                a(href='#') #{user_val}
+        .col-sm-4
+        .col-sm-2
+          .col-sm-2
+          .col-sm-10
+            .collapse.navbar-collapse
+              ul.nav.navbar-nav
+                li
+                  a(href='#') #{user_val}
     .container
       br
       br
@@ -35,66 +37,48 @@ block content
             .container-fluid
               ul.nav.navbar-nav
                 li
-                  a(href='index_prof')
+                  a(href='index_staff')
                     | Home &nbsp; 
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-home(style='font-size:16px;')
                 li
-                  a(href='profile_prof')
+                  a(href='profile_staff')
                     | Profile &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-user(style='font-size:16px;')
-                li
-                  a(href='#')
-                    font(class="text-primary") | Courses &nbsp;
-                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-pencil(style='font-size:16px;' class="text-primary")
-                li
-                  a(href='advisee_prof')
-                    | Advisees &nbsp;
-                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-bullhorn(style='font-size:16px;')
-                li
-                  a(href='project_prof')
-                    | Projects &nbsp;
-                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-file(style='font-size:16px;')
                 li      
-                  a(href='report_prof')
+                  a(href='report_staff')
                     | Report &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-stats(style='font-size:16px;')
                 li
-                  a(href='search_info_prof')
-                    | Search &nbsp;
+                  a(href='search_info')
+                    | Search &nbsp;         
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-search(style='font-size:16px;')
+                li      
+                  a(href='#')  
+                    font(class="text-primary") | Edit Rec. &nbsp;
+                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-wrench(style='font-size:16px;' class="text-primary")
                 li
                   a(href='/logout')
                     | Logout &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-log-out(style='font-size:16px;')
         .col-sm-10
           .container-fluid
-            h1 Courses List
+            h1 Edit Record &nbsp; &nbsp;
             br
             br
-            | Courses which you are teaching appears here.
+            | You can add, delete, edit a student record here.
             br
             br
-            .col-sm-8
-              table.table.table-striped
-                thead
-                  tr
-                    th #
-                    th Course ID
-                    th Course Name
-                    th Section
-                    th Semester
-                    th Year
-                    th Credit
-                tbody
-                  each result,index in results
-                    tr
-                      td= index+1
-                      td= result.cid
-                      td= result.cname
-                      td(align='center')= result.section
-                      td(align='center')= result.semester
-                      td= result.eyear
-                      td(align='center')= result.credit
+            br
+            br
+            h4 Query Statements (SQL)
+            form(method='post' action='/edit_record_query')
+              textarea.form-control(type='text' rows='5' name='input_query' placeholder='ex. SELECT * FROM Student WHERE Student.name = \'Somchai\';')
+              br
+              .col-sm-10
+              .col-sm-1
+                button.btn.btn-md.btn-danger(type='submit') &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Execute&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+                    
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
     script(src="js/bootstrap.min.js")

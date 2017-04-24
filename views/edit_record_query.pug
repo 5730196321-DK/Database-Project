@@ -44,58 +44,49 @@ block content
                   a(href='profile_staff')
                     | Profile &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-user(style='font-size:16px;')
-                li
-                  a(href='upload_staff')
-                    | Upload &nbsp;
-                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-cloud-upload(style='font-size:16px;')
-                li
-                  a(href='download_staff')
-                    font(class="text-primary") | Download &nbsp;
-                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-cloud-download(style='font-size:16px;' class="text-primary")
-                li
-                  a(href='monitor_staff')
-                    | Monitor &nbsp;
+                li      
+                  a(href='report_staff')
+                    | Report &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-stats(style='font-size:16px;')
                 li
                   a(href='search_info')
-                    | Search &nbsp;
+                    | Search &nbsp;         
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-search(style='font-size:16px;')
+                li      
+                  a(href='#')  
+                    font(class="text-primary") | Edit Rec. &nbsp;
+                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-wrench(style='font-size:16px;' class="text-primary")
                 li
                   a(href='/logout')
                     | Logout &nbsp;
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-log-out(style='font-size:16px;')
-        .col-sm-6
+        .col-sm-10
           .container-fluid
-            h1 Download Documents &nbsp;&nbsp;&nbsp;
-            button.btn.btn-lg.btn-primary(type='button') Edit
-            br
-            | You can download important documents here.
+            h1 Edit Record &nbsp; &nbsp;
             br
             br
+            | You can add, delete, edit a student record here.
             br
-            .col-sm-1
-            .col-sm-11
-              li 
-                a(href='#')
-                  h4 Leaving Request Form
-              li  
-                a(href='#')
-                  h4 Internship Checking Form
-              li  
-                a(href='#')
-                  h4 Withdraw Approval Form
-              li  
-                a(href='#')
-                  h4 Coures Opening Request Form
-              li  
-                a(href='#')
-                  h4 MyCourseVille Opening Request Form
-              li  
-                a(href='#')
-                  h4 BlackBoard Opening Request Form
-              li  
-                a(href='#')
-                  h4 Room Reservation Request Form
+            br
+            br
+            br
+            h4 Query Statements (SQL)
+            form(method='post' action='/edit_record_query')
+              textarea.form-control(type='text' rows='5' name='input_query' placeholder='ex. SELECT * FROM Student WHERE Student.name = \'Somchai\';')
+                =previous
+              br
+              .col-sm-10
+              .col-sm-1
+                button.btn.btn-md.btn-danger(type='submit') &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Execute&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            br
+            br
+            h4 Result  
+            textarea.form-control(type='text' rows='9')
+              =JSON.stringify(results)
+            font(color=color_var)=comment
           
+            
+                    
+      
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
     script(src="js/bootstrap.min.js")
