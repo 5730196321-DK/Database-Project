@@ -483,6 +483,7 @@ app.use('/report_staff', report_staff);
 app.use('/search_info', search_info);
 app.use('/login_staff', login_staff);
 
+/*
 // Crate admin default user
 db
   .sequelize
@@ -508,7 +509,7 @@ db
 		});
 	}
 })
-
+*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
