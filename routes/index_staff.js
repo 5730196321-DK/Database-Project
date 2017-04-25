@@ -9,6 +9,7 @@ connection.connect();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  if (req.user.username.length <= 3) { res.redirect('/unauthorized'); return; }
   connection.query(
     'SELECT fname AS info FROM Staff WHERE ssn=\'' + req.user.username
   + '\' UNION ALL SELECT sname FROM Staff WHERE ssn=\'' + req.user.username

@@ -9,6 +9,7 @@ connection.connect();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  if (req.user.username.length > 3) { res.redirect('/unauthorized'); return; }
   connection.query('SELECT Project.pjid,pname,field,description,sid,fname,sname,email,tel FROM (Project JOIN Control_Project ON Project.pjid = Control_Project.pjid) JOIN Undergraduate ON Undergraduate.pjid = Project.pjid WHERE pab = \'' + req.user.username + '\';'  , function selectCb(err, results, fields) {
     if (err) {
       throw err;

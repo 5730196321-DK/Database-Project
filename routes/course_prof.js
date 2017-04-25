@@ -9,6 +9,7 @@ connection.connect();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  if (req.user.username.length > 3) { res.redirect('/unauthorized'); return; }
   connection.query('SELECT * FROM Teach JOIN Course ON Teach.cid = Course.cid  WHERE Teach.pab = \'' + req.user.username + '\';'  , function selectCb(err, results, fields) {
     if (err) {
       throw err;

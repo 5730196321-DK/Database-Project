@@ -9,6 +9,7 @@ connection.connect();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  if (req.user.username.length <= 3) { res.redirect('/unauthorized'); return; }
   connection.query('SELECT *,DATE_FORMAT(bdate, \'%d/%m/%Y\') AS bdate2 FROM Staff JOIN Postalcode ON Staff.district = Postalcode.district WHERE ssn = \'' + req.user.username + '\';'  , function selectCb(err, results, fields) {
     if (err) {
       throw err;
