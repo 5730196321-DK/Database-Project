@@ -173,6 +173,27 @@ block content
                               input.form-control(type='text' name='input_is_sid' placeholder='Student ID (10 digits)')
                             .col-sm-3
                               button.btn.btn-md.btn-warning(type='submit') Search
+              .panel.panel-default
+                .panel-heading
+                  h4.panel-title
+                    a(data-toggle='collapse', data-parent='#accordion', href='#collapse5')
+                      | Course Database
+              #collapse5.panel-collapse.collapse
+                .panel-body
+                  form(method='post' action='/report_staff_c')
+                    .row
+                      .col-sm-4
+                      .col-sm-4
+                        .col-sm-12
+                          h4 Course ID
+                          .row
+                            .col-sm-9
+                              input.form-control(type='text' name='input_c_cid' placeholder='7 digits')
+                            .col-sm-1
+                            .col-sm-2
+                              button.btn.btn-md.btn-warning(type='submit') Search
+                              br
+                              br                
             br
             h2= 'Search Result : ' + results[0].sid
             br

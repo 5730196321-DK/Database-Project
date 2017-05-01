@@ -62,7 +62,7 @@ block content
                     span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-log-out(style='font-size:16px;')
         .col-sm-10
           .container-fluid
-            h1 Internship Information Report
+            h1 Report &nbsp; &nbsp;
             br
             br
             | You can generate an information report here.
@@ -180,7 +180,7 @@ block content
                       | Course Database
                 #collapse5.panel-collapse.collapse
                   .panel-body
-                      form(method='post' action='/report_staff_c')
+                    form(method='post' action='/report_staff_c')
                       .row
                         .col-sm-4
                         .col-sm-4
@@ -193,34 +193,45 @@ block content
                               .col-sm-2
                                 button.btn.btn-md.btn-warning(type='submit') Search
                                 br
-                                br                                                        
+                                br
             br
-            h2 Search Result
+            h2= 'Search Result : ' + results[0].cid
             br
+            br
+            .row
+              .col-sm-4(align='center')
+                h4= 'Course Name'
+                = results[0].cname
+              .col-sm-4(align='center')
+                h4= 'Department'
+                = results[0].dname
+              .col-sm-4(align='center')
+                h4= 'Faculty' 
+                = results[0].faname
+            br
+            br
+            h3 Enrolled Student List
             br
             table.table.table
               thead
                 tr
-                  th #
-                  th Company ID
-                  th Company Name
                   th Student ID
                   th Student Name
-                  th Status
-                  th Start
-                  th Ended
-              tbody
-                each result,index in results
-                  tr
-                    td= index+1
-                    td= result.coid
-                    td= result.cname
-                    td= result.sid
-                    td= result.fname + ' ' + result.sname
-                    td= result.istatus
-                    td= result.fromd2
-                    td= result.tod2
+                  th Professor
+                  th Section
+                  th Year
+                  th Grade
+                tbody
+                  each result in results
+                    tr
+                      td= result.sid
+                      td= result.sname + ' ' + result.fname
+                      td= result.pab
+                      td= result.section
+                      td= result.eyear
+                      td= result.grade
             
+                    
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
     script(src="js/bootstrap.min.js")

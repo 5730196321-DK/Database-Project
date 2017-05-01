@@ -8,6 +8,7 @@
   "dependencies": {
     "bcrypt-nodejs": "latest",
     "body-parser": "~1.17.1",
+    "chartist": "^0.11.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
     "express": "~4.15.2",

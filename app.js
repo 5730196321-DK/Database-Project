@@ -33,21 +33,13 @@ var login_prof_f = require('./routes/login_prof_f');
 var login_staff = require('./routes/login_staff');
 var login_staff_f = require('./routes/login_staff_f');
 
-var index_std = require('./routes/index_std');
-var profile_std = require('./routes/profile_std');
-var grade_std = require('./routes/grade_std');
-var enroll_std = require('./routes/enroll_std');
-var activity_std = require('./routes/activity_std');
-var intern_std = require('./routes/intern_std');
-var search_std = require('./routes/search_std');
-
 var index_prof = require('./routes/index_prof');
+var index_bprof = require('./routes/index_bprof');
 var profile_prof = require('./routes/profile_prof');
 var course_prof = require('./routes/course_prof');
 var course_manage_prof = require('./routes/course_manage_prof');
 var advisee_prof = require('./routes/advisee_prof');
 var project_prof = require('./routes/project_prof');
-var download_prof = require('./routes/download_prof')
 var search_info_prof = require('./routes/search_info_prof');
 var report_prof = require('./routes/report_prof');
 
@@ -81,23 +73,14 @@ app.use(passport.session());
 // Session store
 var sessionStore = new MySQLStore(options);
 
-// Student Authenticate Checker
-app.get('/index_std', application.IsAuthenticated, index_std);
-app.get('/profile_std', application.IsAuthenticated, profile_std);
-app.get('/grade_std', application.IsAuthenticated, grade_std);
-app.get('/enroll_std', application.IsAuthenticated, enroll_std);
-app.get('/activity_std', application.IsAuthenticated, activity_std);
-app.get('/search_std', application.IsAuthenticated, search_std);
-app.get('/intern_std', application.IsAuthenticated, intern_std);
-
 // Professor Authenticate Checker
 app.get('/index_prof', application.IsAuthenticated, index_prof);
+app.get('/index_bprof', application.IsAuthenticated, index_bprof);
 app.get('/profile_prof', application.IsAuthenticated, profile_prof);
 app.get('/course_prof', application.IsAuthenticated, course_prof);
 app.get('/course_manage_prof', application.IsAuthenticated, course_manage_prof);
 app.get('/advisee_prof', application.IsAuthenticated, advisee_prof);
 app.get('/project_prof', application.IsAuthenticated, project_prof);
-app.get('/download_prof', application.IsAuthenticated, download_prof);
 app.get('/search_info_prof', application.IsAuthenticated, search_info_prof);
 app.get('/report_prof', application.IsAuthenticated, report_prof);
 
@@ -151,7 +134,7 @@ app.post('/search_info_s', function(req, res){
     connection.query('SELECT * FROM Student WHERE fname=\''
     + req.body.input_fname + '\' OR sid=\'' + req.body.input_sid +'\' OR sname=\''
     + req.body.input_sname + '\' OR email=\'' + req.body.input_email +'\' OR tel=\''
-    + req.body.input_tel + '\' OR ssn=\'' + req.body.input_ssn + '\';',
+    + req.body.input_tel + '\' OR ssn=\'' + req.body.input_ssn + '\' OR syear = \'' + (2017-req.body.input_year) +'\';',
     function (err, results) {
       if (err) {
         console.error(err);
@@ -298,13 +281,32 @@ app.post('/report_staff_ic', function(req, res){
   );
 });
 
+var report_staff_c = require('./routes/report_staff_c');
+app.use('/report_staff_c', report_staff_e);
+app.post('/report_staff_c', function(req, res){
+    var query_str = 'SELECT Course.cid,Course.cname,Course.credit,Department.dname,Faculty.fname AS faname,Enroll.eyear,Enroll.semester,Enroll.section,Teach.pab,Enroll.grade,Student.fname,Student.sname,Student.sid FROM Course JOIN Teach ON Course.cid = Teach.cid JOIN Professor ON Professor.pab = Teach.pab JOIN Enroll ON Enroll.cid = Course.cid JOIN Student ON Student.sid = Enroll.sid JOIN Department ON Department.did = Course.did JOIN Faculty ON Faculty.fid = Course.fid WHERE Course.cid = \'' + req.body.input_c_cid + '\';';
+    connection.query(query_str,
+    function (err, results) {
+      if (err) {
+        console.error(err);
+        return;
+      }
+        console.log(results);
+      if (results.length <= 0) {
+        res.render('report_staff', { title: 'Report', user_val: req.user.username, notfound_str: 'Search results not found.' });
+      }
+      res.render('report_staff_c', { title: 'Course Report', user_val: req.user.username, results: results });
+    }
+  );
+});
+
 var search_info_prof_s = require('./routes/search_info_prof_s');
 app.use('/search_info_prof_s', search_info_prof_s);
 app.post('/search_info_prof_s', function(req, res){
     connection.query('SELECT * FROM Student WHERE fname=\''
     + req.body.input_fname + '\' OR sid=\'' + req.body.input_sid +'\' OR sname=\''
     + req.body.input_sname + '\' OR email=\'' + req.body.input_email +'\' OR tel=\''
-    + req.body.input_tel + '\' OR ssn=\'' + req.body.input_ssn + '\';',
+    + req.body.input_tel + '\' OR ssn=\'' + req.body.input_ssn + '\' OR syear = \'' + (2017-req.body.input_year) +'\';',
     function (err, results) {
       if (err) {
         console.error(err);
@@ -459,21 +461,13 @@ app.use('/unauthorized', unauthorized);
 app.use('/login_prof_f', login_prof_f);
 app.use('/login_staff_f', login_staff_f);
 
-app.use('/index_std', index_std);
-app.use('/profile_std', profile_std);
-app.use('/grade_std', grade_std);
-app.use('/enroll_std', enroll_std);
-app.use('/activity_std', activity_std);
-app.use('/search_std', search_std);
-app.use('/intern_std', intern_std);
-
 app.use('/index_prof', index_prof);
+app.use('/index_bprof', index_bprof);
 app.use('/profile_prof', profile_prof);
 app.use('/course_prof', course_prof);
 app.use('/course_manage_prof', course_manage_prof);
 app.use('/advisee_prof', advisee_prof);
 app.use('/project_prof', project_prof);
-app.use('/download_prof', download_prof);
 app.use('/search_info_prof', search_info_prof);
 app.use('/report_prof', report_prof);
 
@@ -483,7 +477,6 @@ app.use('/edit_record', edit_record);
 app.use('/report_staff', report_staff);
 app.use('/search_info', search_info);
 app.use('/login_staff', login_staff);
-
 
 // Crate admin default user
 db
